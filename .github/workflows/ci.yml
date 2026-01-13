@@ -9,12 +9,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      DB_CONNECTION: mysql
-      DB_HOST: 127.0.0.1
-      DB_PORT: 3306
-      DB_DATABASE: laravel
-      DB_USERNAME: root
-      DB_PASSWORD: root
+       DB_CONNECTION: ${{ secrets.DB_CONNECTION }}
+       DB_HOST: ${{ secrets.DB_HOST }}
+       DB_PORT: ${{ secrets.DB_PORT }}
+       DB_DATABASE: ${{ secrets.DB_DATABASE }}
+       DB_USERNAME: ${{ secrets.DB_USERNAME }}
+       DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
     services:
       mysql:
         image: mysql:8.0
