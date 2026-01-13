@@ -17,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/tasks', function () {
+    return response()->json(
+        \App\Models\Task::create([
+            'title' => request('title'),
+        ]),
+        201
+    );
+});
